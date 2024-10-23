@@ -15,6 +15,16 @@
                 <KeyCodeCombination alt="UP" control="DOWN" meta="UP" shift="UP" shortcut="UP" code="F"/>
             </accelerator>
             </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#renderPolygon" text="renderPolygon">
+                <accelerator>
+<!--                    <KeyCodeCombination alt="UP" control="DOWN" meta="UP" shift="UP" shortcut="UP" code="F"/>-->
+                </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" onAction="#renderTriangle" text="renderTriangle">
+                <accelerator>
+                    <!--                    <KeyCodeCombination alt="UP" control="DOWN" meta="UP" shift="UP" shortcut="UP" code="F"/>-->
+                </accelerator>
+            </MenuItem>
         </Menu>
         <Menu mnemonicParsing="false" text="Camera Options">
             <MenuItem mnemonicParsing="false" onAction="#handleCameraForward" text="Forward">

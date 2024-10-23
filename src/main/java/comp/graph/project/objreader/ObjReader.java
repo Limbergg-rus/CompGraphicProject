@@ -112,6 +112,7 @@ public class ObjReader {
 		result.setVertexIndices(onePolygonVertexIndices);
 		result.setTextureVertexIndices(onePolygonTextureVertexIndices);
 		result.setNormalIndices(onePolygonNormalIndices);
+		result.triangulation();
 		return result;
 	}
 

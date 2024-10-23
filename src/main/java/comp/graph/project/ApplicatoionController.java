@@ -2,6 +2,7 @@ package comp.graph.project;
 
 
 import comp.graph.project.render_engine.RenderEngine;
+import comp.graph.project.render_engine.ShowTriangles;
 import javafx.fxml.FXML;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -24,7 +25,10 @@ import comp.graph.project.render_engine.Camera;
 
 public class ApplicatoionController {
 
-    final private float TRANSLATION = 0.5F;
+    final private float TRANSLATION = 5F;
+    private Path fileName;
+    private int width;
+    private int height;
 
     @FXML
     AnchorPane anchorPane;
@@ -43,6 +47,10 @@ public class ApplicatoionController {
 
     @FXML
     private void initialize() {
+        renderModel(ShowTriangles.POLYGONS);
+    }
+
+    private void renderModel(Enum triangle) {
         anchorPane.prefWidthProperty().addListener((ov, oldValue, newValue) -> canvas.setWidth(newValue.doubleValue()));
         anchorPane.prefHeightProperty().addListener((ov, oldValue, newValue) -> canvas.setHeight(newValue.doubleValue()));
 
@@ -57,7 +65,7 @@ public class ApplicatoionController {
             camera.setAspectRatio((float) (width / height));
 
             if (mesh != null) {
-                RenderEngine.render(canvas.getGraphicsContext2D(), camera, mesh, (int) width, (int) height);
+                RenderEngine.render(canvas.getGraphicsContext2D(), camera, mesh, (int) width, (int) height, triangle);
             }
         });
 
@@ -77,6 +85,7 @@ public class ApplicatoionController {
         }
 
         Path fileName = Path.of(file.getAbsolutePath());
+        this.fileName = fileName;
 
         try {
             String fileContent = Files.readString(fileName);
@@ -115,5 +124,15 @@ public class ApplicatoionController {
     @FXML
     public void handleCameraDown(ActionEvent actionEvent) {
         camera.movePosition(new Vector3f(0, -TRANSLATION, 0));
+    }
+
+    //TODO Кнопки не работают
+    public void renderPolygon(ActionEvent actionEvent) {
+        renderModel(ShowTriangles.POLYGONS);
+    }
+    //TODO Кнопки не работают
+    public void renderTriangle(ActionEvent actionEvent) {
+
+       renderModel(ShowTriangles.TRIANGLES);
     }
 }
