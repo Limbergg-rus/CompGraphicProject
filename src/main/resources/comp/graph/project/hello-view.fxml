@@ -5,7 +5,7 @@
 
 
 <AnchorPane fx:id="anchorPane" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="comp.graph.project.HelloController">
+            fx:controller="comp.graph.project.ApplicatoionController">
     <Canvas fx:id="canvas" width="800" height="600" AnchorPane.topAnchor="30.0"/>
 </AnchorPane>
 

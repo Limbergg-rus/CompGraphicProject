@@ -22,7 +22,7 @@ import comp.graph.project.model.Model;
 import comp.graph.project.objreader.ObjReader;
 import comp.graph.project.render_engine.Camera;
 
-public class HelloController {
+public class ApplicatoionController {
 
     final private float TRANSLATION = 0.5F;
 
