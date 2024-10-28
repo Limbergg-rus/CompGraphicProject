@@ -1,9 +1,10 @@
 package comp.graph.project.render_engine;
 
-import javax.vecmath.Matrix4f;
-import javax.vecmath.Vector3f;
 
-public class Camera {
+import comp.graph.project.math.Vector3f;
+
+public class
+Camera {
 
     public Camera(
             final Vector3f position,
